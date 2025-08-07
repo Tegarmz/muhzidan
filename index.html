@@ -2,32 +2,26 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Nailong Nanya Hari Kamu 🐸💚</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aku Mau Tanya Buat Hari Ini 🐸</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>🐸 Haii, aku Nailong! 🐸</h1>
-    <p>Aku mau nanya... gimana harimu hari ini? 🥺</p>
+  <div class="card">
+    <h1>🐸 Hai!!</h1>
+    <p>Gimana hari ini? Cerita dong </p>
 
     <form id="nailongForm">
-      <label>Hari kamu seru nggak? 🤔</label>
-      <input type="text" id="seru" placeholder="Ceritain dikit ya..." required>
-
-      <label>Rate hari ini dari 1-10 💯</label>
-      <input type="number" id="rate" min="1" max="10" required>
-
-      <label>Ada yang mau diceritain nggak? 😚</label>
-      <textarea id="cerita" rows="4" placeholder="Isi di sini kalau mau cerita yaa~"></textarea>
-
-      <button type="submit">Kirim ke Nailong 💌</button>
+      <input type="text" id="seru" placeholder="Seru gak hari ini?" required>
+      <input type="number" id="rate" placeholder="Rate hari ini 1-10" min="1" max="10" required>
+      <textarea id="cerita" rows="3" placeholder="Cerita dikit yaa..." required></textarea>
+      <button type="submit">Kirim ke akuu </button>
     </form>
   </div>
 
-  <!-- Ganti link di bawah dengan link MP3 kamu -->
   <audio autoplay loop>
-    <source src="https://example.com/lagu-romantis.mp3" type="audio/mp3">
-    Browser kamu tidak mendukung audio.
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
   </audio>
 
   <script src="script.js"></script>
