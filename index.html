@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nailong Lucu</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Nailong Nanya Hari Kamu 🐸💚</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🐸 Haiiii!</h1>
-  <img src="nailong.jpg" alt="Nailong Lucu" class="nailong" />
+  <div class="container">
+    <h1>🐸 Haii, aku Nailong! 🐸</h1>
+    <p>Aku mau nanya... gimana harimu hari ini? 🥺</p>
 
-  <p class="pertanyaan">
-    How ur day?? Gimana hari kamuu apakahh semenyenangkan seperti hari hari sebelumnya??<br>
-    Kalo ada yang mau diceritain ceritainnn ajaa ya okeyyyy 💌
-  </p>
+    <form id="nailongForm">
+      <label>Hari kamu seru nggak? 🤔</label>
+      <input type="text" id="seru" placeholder="Ceritain dikit ya..." required>
 
-  <form action="https://api.whatsapp.com/send" method="GET" target="_blank">
-    <input type="hidden" name="phone" value="6283824581436" />
-    <textarea name="text" placeholder="Tulis ceritamu di sini yaa..." required></textarea>
-    <br />
-    <button type="submit">Kirim cerita kamuu woi 📩</button>
-  </form>
+      <label>Rate hari ini dari 1-10 💯</label>
+      <input type="number" id="rate" min="1" max="10" required>
 
+      <label>Ada yang mau diceritain nggak? 😚</label>
+      <textarea id="cerita" rows="4" placeholder="Isi di sini kalau mau cerita yaa~"></textarea>
+
+      <button type="submit">Kirim ke Nailong 💌</button>
+    </form>
+  </div>
+
+  <!-- Ganti link di bawah dengan link MP3 kamu -->
   <audio autoplay loop>
-    <source src="happiness.mp3" type="audio/mpeg" />
+    <source src="https://example.com/lagu-romantis.mp3" type="audio/mp3">
     Browser kamu tidak mendukung audio.
   </audio>
+
+  <script src="script.js"></script>
 </body>
 </html>
