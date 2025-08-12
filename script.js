@@ -1,15 +1,33 @@
-document.getElementById("nailongForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+const submitBtn = document.getElementById('submitBtn');
+const answerInput = document.getElementById('answer');
+const responseDiv = document.getElementById('response');
 
-  let seru = document.getElementById("seru").value;
-  let rate = document.getElementById("rate").value;
-  let cerita = document.getElementById("cerita").value;
+submitBtn.addEventListener('click', () => {
+  const answer = answerInput.value.trim();
+  if (!answer) {
+    responseDiv.textContent = "Please type something!";
+    responseDiv.style.color = '#e74c3c';
+    return;
+  }
 
-  // Ganti dengan nomor WhatsApp kamu (tanpa +, pakai 62)
-  let nomorWhatsApp = "6283824581436";
-
-  let pesan = `Hai Nailong 🐸%0AHari ini: ${seru}%0ARate: ${rate}/10%0ACerita: ${cerita}`;
-  let url = `https://wa.me/${nomorWhatsApp}?text=${encodeURIComponent(pesan)}`;
-
-  window.open(url, '_blank');
+  fetch('/submit-answer', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ answer })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if(data.status === 'success'){
+      responseDiv.textContent = "Thanks! Your answer was sent.";
+      responseDiv.style.color = '#27ae60';
+      answerInput.value = '';
+    } else {
+      responseDiv.textContent = "Failed to send answer.";
+      responseDiv.style.color = '#e74c3c';
+    }
+  })
+  .catch(() => {
+    responseDiv.textContent = "Error sending answer.";
+    responseDiv.style.color = '#e74c3c';
+  });
 });
